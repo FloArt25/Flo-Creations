@@ -1,0 +1,82 @@
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fff8f8;
+}
+header.sticky-header {
+    position: sticky;
+    top: 0;
+    background-color: pink;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+header .logo {
+    font-weight: bold;
+    font-size: 18px;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+nav a:hover {
+    text-decoration: underline;
+}
+.hero {
+    background: linear-gradient(to right, #ffccd5, #fff);
+    padding: 100px 20px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+.gallery {
+    padding: 40px 20px;
+    text-align: center;
+}
+.gallery-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.gallery-grid img {
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.contact-form {
+    padding: 40px 20px;
+    text-align: center;
+}
+.contact-form form {
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.contact-form input, .contact-form textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+.contact-form button {
+    background-color: pink;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.contact-form button:hover {
+    background-color: #ff9aa2;
+}
