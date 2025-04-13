@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact - Florence Créations</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body class="contact-bg">
+  <header>
+    <nav class="navbar">
+      <div class="logo">🎨 Florence Créations</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="galerie.html">Galerie</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contact-container">
+    <h1 class="contact-title">Contacte-moi 🎨</h1>
+    <p class="contact-text">Pour toute commande ou demande personnalisée, tu peux m’écrire ici :</p>
+    <p class="contact-text">📧 <a href="mailto:tonemail@example.com" class="contact-email">mamie2006@live.fr</a></p>
+
+    <form action="https://formspree.io/f/xpwpblva" method="POST" class="contact-form" id="form">
+      <input type="text" name="Nom" placeholder="Ton nom" required />
+      <input type="email" name="Email" placeholder="Ton adresse email" required />
+      <textarea name="Message" placeholder="Ton message..." rows="6" required></textarea>
+      <button type="submit">Envoyer ✨</button>
+      <p class="confirmation-message" id="confirmation" style="display: none;">Merci ! Ton message a bien été envoyé 💌</p>
+    </form>
+
+    <div class="socials">
+      <p></p>
+      <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="social-link"><i class="fab fa-pinterest-p"></i></a>
+    </div>
+  </main>
+
+  <script>
+    const form = document.getElementById('form');
+    const confirmation = document.getElementById('confirmation');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: {
+          'Accept': 'application/json'
+        }
+      }).then(() => {
+        confirmation.style.display = 'block';
+        form.reset();
+      }).catch(() => {
+        confirmation.innerText = "Erreur lors de l’envoi. Réessaie.";
+        confirmation.style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>
+
+
